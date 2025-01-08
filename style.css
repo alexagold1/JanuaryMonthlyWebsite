@@ -1,0 +1,16 @@
+.row {
+  border-style: solid;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.col-2 {
+  margin: 300px;
+}

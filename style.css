@@ -1,9 +1,9 @@
-.row {
-  border-style: solid;
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-top: 30px;
-  text-align: center;
+body {
+  background-image: url(imgs/computer.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%, 70%;
+  background-color: black;
 }
 
 img {
@@ -12,5 +12,16 @@ img {
 }
 
 .col-2 {
-  margin: 300px;
+  margin-left: 200px;
+}
+.row {
+  color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.center-screen {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

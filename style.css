@@ -11,17 +11,37 @@ img {
   height: 100px;
 }
 
-.col-2 {
+/* .col-2 {
   margin-left: 200px;
-}
+} */
 .row {
   color: white;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 0 !important;
 }
 .center-screen {
   height: 80vh;
-  display: flex;
   justify-content: center;
   align-items: center;
+}
+.col-6,
+.col-12 {
+  margin: 0 !important;
+}
+button {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  object-fit: cover;
+  background-color: white;
+}
+.falsebutton {
+  background-color: white;
+}
+
+.buttonCols {
+  padding: 0 !important;
+}
+
+.col-4 {
+  margin-top: 270px;
 }

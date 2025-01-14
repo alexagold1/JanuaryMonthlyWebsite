@@ -2,7 +2,7 @@ body {
   background-image: url(imgs/computer.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70%, 70%;
+  background-size: cover;
   background-color: black;
 }
 
@@ -43,5 +43,5 @@ button {
 }
 
 .col-4 {
-  margin-top: 270px;
+  margin-top: 230px;
 }

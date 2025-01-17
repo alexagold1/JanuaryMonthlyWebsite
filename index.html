@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Rock, Paper, Scissor</title>
+    <title>Rock-Paper-Scissors</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -13,59 +14,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
-    <header>
-        <!-- place navbar here -->
-    </header>
-    <main>
-        <div class="container-fluid center-screen">
-            <!-- Score Labels-->
-            <div class="row justify-content-center text-center">
-                <div class="col-4">
-                    <h1>USER</h1>
-                    <div class="p">Score = </div>
 
-                    <img id="userChoiceImg" src="https://picsum.photos/id/684/600/400" alt="">
-                </div>
-                <div class="col-4">
-                    <h1>COMP</h1>
-                    <div class="p">Comp Score = </div>
-                    <img src="https://picsum.photos/id/684/600/400" alt="">
-                </div>
-            </div>
-            <!-- User Choice Buttons-->
-            <div class="row justify-content-center">
-                <div class="col-2 buttonCols">
-                    <button type="button" class="rock" onclick="playGame('rock')">
-                        <img src="imgs/rock.png" />
-                    </button>
-                </div>
-                <div class="col-2 buttonCols">
-                    <button type="button" class="paper" onclick="playGame('paper')">
-                        <img src="imgs/paper.png" />
-                    </button>
-                </div>
-                <div class="col-2 buttonCols">
-                    <button type="button" class="scissors" onclick="playGame('scissors')">
-                        <img src="imgs/scissors.png" />
-                    </button>
-                </div>
-            </div>
+    <div class="wrapper">
+        <h1> Rock-Paper-Scissors </h1>
 
+
+        <h3 id="greeting">Choose!</h3>
+
+
+        <div id="choices">
+            <button>🪨</button>
+            <button>🗒️</button>
+            <button>✂️</button>
         </div>
-    </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
+        <div id="player-choice">PLAYER:</div>
+        <div id="computer-choice">COMPUTER:</div>
+        <div id="resultDisplay">RESULT</div>
+    </div>
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </body>
 
 </html>

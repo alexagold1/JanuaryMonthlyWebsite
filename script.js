@@ -1,3 +1,8 @@
+let userName = prompt("Hi, who are you?");
+
+userName ? document.getElementById('greeting').innerText = `Hello, ${userName}! Pick your choice to start.`: document.getElementById('greeting').innerText = `Hello!`;
+
+
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber) {
@@ -46,7 +51,6 @@ const determineWinner = (userChoice, computerChoice) => {
 const playGame = (userChoice) => {
     const computerChoice = getComputerChoice();
     console.log(`You chose: ${userChoice}.`);
-    console.log(`Computer chose: ${computerChoice}.`);
-   
+    console.log(`Computer chose: ${computerChoice}.`);  
     console.log(determineWinner(userChoice, computerChoice));
 };

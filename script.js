@@ -2,7 +2,6 @@ let userName = prompt("Hi, who are you?");
 
 userName ? document.getElementById('greeting').innerText = `Hello, ${userName}! Pick your choice to start.`: document.getElementById('greeting').innerText = `Hello!`;
 
-
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber) {

@@ -18,16 +18,19 @@
 <body>
 
     <div class="wrapper">
-        <h1> Rock-Paper-Scissors </h1>
+        <h1> Welcome to Rock-Paper-Scissors </h1>
 
 
         <h3 id="greeting"></h3>
 
+        <div id="playerScore">Player: 0 </div>
+        <div id="computerScore"> Computer: 0</div>
+
 
         <div id="choices">
-            <button>🪨</button>
-            <button>🗒️</button>
-            <button>✂️</button>
+            <button onclick="game('🪨')">🪨</button>
+            <button onclick="game('🗒️')">🗒️</button>
+            <button onclick="game('✂️')">✂️</button>
         </div>
         <div id="player-choice">PLAYER:</div>
         <div id="computer-choice">COMPUTER:</div>

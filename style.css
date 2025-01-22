@@ -24,7 +24,7 @@ body {
   gap: 2.5em;
   border: 3px solid rgb(201, 201, 201);
   border-radius: 2em;
-  padding: 5em 3em;
+  padding: 2em 3em;
 }
 h1 {
   font-size: 3em;
@@ -56,4 +56,14 @@ h3 {
   border: 3px solid rgb(109, 153, 255);
   border-radius: 0.5em;
   padding: 10px 50px;
+}
+
+#playerScore {
+  font-weight: bold;
+  font-size: larger;
+}
+
+#computerScore {
+  font-weight: bold;
+  font-size: larger;
 }

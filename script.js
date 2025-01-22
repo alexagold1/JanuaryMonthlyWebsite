@@ -1,55 +1,56 @@
-let userName = prompt("Hi, who are you?");
 
-userName ? document.getElementById('greeting').innerText = `Hello, ${userName}! Pick your choice to start.`: document.getElementById('greeting').innerText = `Hello!`;
+let userName = prompt('What is your name?')
+userName = userName.charAt(0).toUpperCase() + userName.slice(1);
+//End Prompts
 
-const getComputerChoice = () => {
-  const randomNumber = Math.floor(Math.random() * 3);
-  switch (randomNumber) {
-    case 0:
-      return 'rock';
-    case 1:
-      return 'paper';
-    case 2:
-      return 'scissors';
-  }
-};
+let myTitle = `
+ Click your choice below to start, ${userName}!
+`;
 
-const determineWinner = (userChoice, computerChoice) => {
-  if (userChoice === computerChoice) {
-      return 'The game is a tie!';
-  }
-  if (userChoice === 'rock') {
-      if (computerChoice === 'paper') {
-        return 'Computer won.';
-        } else {
-          return 'You won!';
-        }
-  }
+console.log(myTitle);
 
-  if (userChoice === 'paper') {
-      if (computerChoice === 'scissors') {
-          return 'Computer won.';
-      } else {
-          return 'You won!';
-      }
+document.getElementById('greeting').innerHTML = myTitle;
+
+
+const playerDisplay = document.getElementById("player-choice");
+const computerDisplay = document.getElementById("computer-choice");
+const resultDisplay = document.getElementById("resultDisplay");
+
+function game(playerChoice) {
+  const randomNumber = Math.floor(Math.random() * 3); // 0, 1, or 2
+  
+  let computerChoice;
+  if (randomNumber === 0) {
+    computerChoice = "🪨";
+  } else if (randomNumber === 1) {
+    computerChoice = "🗒️";
+  } else {
+    computerChoice = "✂️";
   }
 
-  if (userChoice === 'scissors') {
-      if (computerChoice === 'rock') {
-          return 'Computer won.';
-      } else {
-          return 'You won!';
-      }
-  }
+  const getResult = (playerChoice, computerChoice) =>
+    playerChoice === computerChoice
+      ? "It's a tie 😫"
+      : (playerChoice === "🪨" && computerChoice === "✂️") ||
+        (playerChoice === "🗒️" && computerChoice === "🪨") ||
+        (playerChoice === "✂️" && computerChoice === "🗒️")
+      ? "You win! 😄"
+      : "You Lose! 🥲";
 
-  if (userChoice === 'bomb') {
-      return 'You won!';
-  }
-};
+  const result = getResult(playerChoice, computerChoice);
+  resultDisplay.textContent = result;
+  playerDisplay.textContent = `PLAYER: ${playerChoice}`;
+  computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
 
-const playGame = (userChoice) => {
-    const computerChoice = getComputerChoice();
-    console.log(`You chose: ${userChoice}.`);
-    console.log(`Computer chose: ${computerChoice}.`);  
-    console.log(determineWinner(userChoice, computerChoice));
-};
+  resultDisplay.style.backgroundColor =
+    result === "It's a tie 😫"
+      ? "blue"
+      : result === "You win! 😄"
+      ? "green"
+      : result === "You Lose! 🥲"
+      ? "red"
+      : "";
+
+  resultDisplay.style.border = "2px solid transparent";
+  resultDisplay.style.color = "white";
+}

@@ -1,8 +1,6 @@
 
 let userName = prompt('What is your name?')
 userName = userName.charAt(0).toUpperCase() + userName.slice(1);
-//End Prompts
-
 let myTitle = `
  Click your choice below to start, ${userName}!
 `;
@@ -15,11 +13,22 @@ document.getElementById('greeting').innerHTML = myTitle;
 const playerDisplay = document.getElementById("player-choice");
 const computerDisplay = document.getElementById("computer-choice");
 const resultDisplay = document.getElementById("resultDisplay");
+const playerScoreDisplay = document.getElementById("playerScoreDisplay");
+const computerScoreDisplay = document.getElementById("computerScoreDisplay");
+
+let playerScore = 0;
+let computerScore = 0;
+let roundsPlayed = 0;
 
 function game(playerChoice) {
-  const randomNumber = Math.floor(Math.random() * 3); // 0, 1, or 2
-  
+  if (roundsPlayed >= 5) {
+    alert(`Game over! Final score - Player: ${playerScore}, Computer: ${computerScore}`);
+    return;
+  }
+
+  const randomNumber = Math.floor(Math.random() * 3);
   let computerChoice;
+
   if (randomNumber === 0) {
     computerChoice = "🪨";
   } else if (randomNumber === 1) {
@@ -28,14 +37,19 @@ function game(playerChoice) {
     computerChoice = "✂️";
   }
 
-  const getResult = (playerChoice, computerChoice) =>
-    playerChoice === computerChoice
-      ? "It's a tie 😫"
-      : (playerChoice === "🪨" && computerChoice === "✂️") ||
-        (playerChoice === "🗒️" && computerChoice === "🪨") ||
-        (playerChoice === "✂️" && computerChoice === "🗒️")
-      ? "You win! 😄"
-      : "You Lose! 🥲";
+  const getResult = (playerChoice, computerChoice) => {
+    if (playerChoice === computerChoice) {
+      return "It's a tie 😫";
+    } 
+    if (
+      (playerChoice === "🪨" && computerChoice === "✂️") ||
+      (playerChoice === "🗒️" && computerChoice === "🪨") ||
+      (playerChoice === "✂️" && computerChoice === "🗒️")
+    ) {
+      return "You win! 😄";
+    }
+    return "You Lose! 🥲";
+  };
 
   const result = getResult(playerChoice, computerChoice);
   resultDisplay.textContent = result;
@@ -47,10 +61,29 @@ function game(playerChoice) {
       ? "blue"
       : result === "You win! 😄"
       ? "green"
-      : result === "You Lose! 🥲"
-      ? "red"
-      : "";
+      : "red";
 
   resultDisplay.style.border = "2px solid transparent";
   resultDisplay.style.color = "white";
+
+  switch (result) {
+    case "You win! 😄":
+      resultDisplay.classList.add("greenText");
+      playerScore++;
+      playerScoreDisplay.textContent = playerScore;
+      break;
+    case "You Lose! 🥲":
+      resultDisplay.classList.add("redText");
+      computerScore++;
+      computerScoreDisplay.textContent = computerScore;
+      break;
+  }
+
+  roundsPlayed++;
+
+  if (roundsPlayed === 5) {
+    setTimeout(() => {
+      alert(`Game over! Final score - Player: ${playerScore}, Computer: ${computerScore}`);
+    }, 200);
+  }
 }

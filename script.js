@@ -22,7 +22,8 @@ let roundsPlayed = 0;
 
 function game(playerChoice) {
   if (roundsPlayed >= 5) {
-    alert(`Game over! Final score - Player: ${playerScore}, Computer: ${computerScore}`);
+    alert(`Game over! Final score - Player: ${playerScore}, Computer: ${computerScore}.    
+    Reload page to play again!`);
     return;
   }
 
@@ -80,10 +81,4 @@ function game(playerChoice) {
   }
 
   roundsPlayed++;
-
-  if (roundsPlayed === 5) {
-    setTimeout(() => {
-      alert(`Game over! Final score - Player: ${playerScore}, Computer: ${computerScore}`);
-    }, 200);
-  }
 }

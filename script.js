@@ -11,7 +11,7 @@ document.getElementById('greeting').innerHTML = myTitle;
 
 
 const playerDisplay = document.getElementById("player-choice");
-const computerDisplay = document.getElementById("computer-choice");
+  const computerDisplay = document.getElementById("computer-choice");
 const resultDisplay = document.getElementById("resultDisplay");
 const playerScoreDisplay = document.getElementById("playerScoreDisplay");
 const computerScoreDisplay = document.getElementById("computerScoreDisplay");
